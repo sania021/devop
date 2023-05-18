@@ -1,6 +1,9 @@
 pipeline {
     agent {label 'micro'}
-
+ options {
+        // Timeout counter starts AFTER agent is allocated
+    
+        timeout(time: 1, unit: 'minute')
     stages {
         stage('Build') {
             steps {
