@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'micro'}
+    agent any
  options {
         timeout(time: 1, unit: 'MINUTE')
  }
