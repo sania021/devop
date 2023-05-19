@@ -1,7 +1,6 @@
 pipeline {
-    agent {
-        label 'micro'
-    }
+    agent any
+   
   stages {
         stage('Build') {
             steps {
