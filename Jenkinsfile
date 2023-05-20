@@ -1,29 +1,44 @@
 pipeline {
     agent any
+    environment{
+        microcare ='academy'
+        devops ='customvariables'
+    }
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo "${USER}"
+              //  sh "printenv | sort"
             }
         }
-        stage('Build1') {
+         stage('Build1') {
+            steps {
+                echo '${microcare}'
+                echo '${devops}'
+            }
+        }
+         stage('Build2') {
+              when{
+                  not {
+                 branch "master"
+                  }
+             }
             steps {
                 echo 'Building..'
             }
         }
-        stage('Build2') {
+         stage('Build3') {
+             when {
+                 not{
+                branch "devops"
+                 }
+             }
             steps {
-                 echo 'Building..'
-            }
-        }
-        stage('Build3') {
-            steps {
-                echo 'Building....'
+                echo 'Building..'
             }
         }
     }
-}
- post { 
+    post { 
         aborted { 
             echo 'ABORTED'
         }
