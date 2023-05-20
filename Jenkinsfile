@@ -1,7 +1,8 @@
 pipeline {
     agent {label 'micro'}
-    options {
-        timeout(time: 1, unit: 'MINUTE')
+    options 
+    {
+        timeout(time: 15, unit: 'SECONDS')
     }
     stages {
         stage('Build') {
