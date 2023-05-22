@@ -19,5 +19,6 @@ node{
        sshCommand remote : remote, command: "sudo mkdir micro_steps"
         sshCommand remote : remote, command: "cd micro_steps"
     sshCommand remote : remote, command: "pwd"
-    
+  }
+}
     
