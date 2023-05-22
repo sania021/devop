@@ -14,7 +14,7 @@ node{
       sshCommand remote : remote, command: "ls -lrt"
   }     
   stage('Remote SSH2') {
-    sshScript remote: remote, script: "./ms/hello.txt"
+    sshScript remote: remote, script: "./ms/windows.txt"
   }
 }
     
