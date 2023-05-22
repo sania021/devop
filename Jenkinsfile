@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment{
         microcare ='academy'
-        devops ='customvariables'
+        GIT_CRED = credentials('github') //username:password //secretkey
     }
     stages {
         stage('Build') {
@@ -14,7 +14,10 @@ pipeline {
          stage('Build1') {
             steps {
                 echo "${env.microcare}"
-                echo "${env.devops}"
+               //  def password = ${GIT_CRED_PSW}
+             //  sh 'echo %env.GIT_CRED%'
+             // echo "${password}"
+                echo "${env.GIT_CRED_USR}"
             }
         }
          stage('Build2') {
