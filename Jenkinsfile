@@ -15,4 +15,6 @@ node{
   }     
  stage('Remote SSH') {
    sshScript remote: remote, script: "./newfile"
+ }
+}
     
