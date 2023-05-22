@@ -13,8 +13,6 @@ node{
     sshCommand remote : remote, command: "pwd"
       sshCommand remote : remote, command: "ls -lrt"
   }     
-stage('Remote SSH') {
-    sshRemove remote: remote, path: "ms.txt"
-  }
-}
+ stage('Remote SSH') {
+   sshScript remote: remote, script: "./newfile"
     
