@@ -13,12 +13,8 @@ node{
     sshCommand remote : remote, command: "pwd"
       sshCommand remote : remote, command: "ls -lrt"
   }     
-  stage('Remote SSH2') {
-    //writefile file: 'abc.sh' , text: 'ls -lrt'
-    // sshScript remote: remote, script: "abc.sh"
-       sshCommand remote : remote, command: "sudo mkdir ms.txt"
-        sshCommand remote : remote, command: "cd ms.txt"
-    sshCommand remote : remote, command: "pwd"
-  }
+ stage('Remote SSH') {
+   sshScript remote: remote, script: "./newfile"
+ }
 }
     
